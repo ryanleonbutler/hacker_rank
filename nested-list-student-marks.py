@@ -16,4 +16,3 @@ for i in range(n):
     markSheet.append([name, mark])
 
 markSheet = sorted.markSheet
-
