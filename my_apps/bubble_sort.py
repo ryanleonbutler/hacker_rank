@@ -2,28 +2,50 @@
 
 from datetime import datetime
 
-MY_LIST = [160, 190, 60, 20, 30, 140, 180, 50, 100, 10, 90, 80, 40, 190, 70, 110, 130, 200, 120, 170, 150]
+MY_LIST = [5, 3, 1, 2, 4]
 
 start_time = datetime.now()
 
-def my_bubble_sort(my_list):
+
+def my_bubble_sort_v1(l):
     n = 0
     while True:
-        try:
-            for i in range(0, len(my_list)):
-                if my_list[0+n] <= my_list[1+n]:
+        for i in range(0, len(l)):
+            try:
+                if l[0 + n] <= l[1 + n]:
                     n += 1
-                    if n == len(my_list):
-                        return(my_list)
-            else:
-                temp = my_list[0+n]
-                my_list[0+n] = my_list[1+n]
-                my_list[1+n] = temp
-                n = 0
-        except IndexError:
-            return(my_list)
-        
-print(my_bubble_sort(MY_LIST))
+                    if n == len(l):
+                        break
+                else:
+                    temp = l[0 + n]
+                    l[0 + n] = l[1 + n]
+                    l[1 + n] = temp
+                    n = 0
+            except IndexError as e:
+                pass
+    return l
 
-end_time = datetime.now()
-print(f'Duration: {format(end_time - start_time)}')
+
+def my_bubble_sort_v2(l):
+    n = len(l)
+    for i in range(n):
+        print(f"i = {i}")
+        for j in range(0, n - i - 1):
+            print(f"j = {j}")
+            print(f"n - i - 1 = {n - i - 1}")
+            if l[j] > l[j + 1]:
+                l[j], l[j + 1] = l[j + 1], l[j]
+
+
+if __name__ == "__main__":
+
+    # My Sort
+    # my_bubble_sort_v1(MY_LIST)
+    my_bubble_sort_v2(MY_LIST)
+    print(MY_LIST)
+
+    # Built in Sort:
+    # print(sorted(l))
+
+    end_time = datetime.now()
+    print(f"Duration: {format(end_time - start_time)}")
