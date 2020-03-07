@@ -2,10 +2,9 @@
 
 from datetime import datetime
 
-MY_LIST = [5, 3, 1, 2, 4]
+MY_LIST = [212, 543, 65, 4, 3, 56, 765]
 
 start_time = datetime.now()
-
 
 def my_bubble_sort_v1(l):
     n = 0
@@ -29,10 +28,10 @@ def my_bubble_sort_v1(l):
 def my_bubble_sort_v2(l):
     n = len(l)
     for i in range(n):
-        print(f"i = {i}")
+        #print(f"i = {i}")
         for j in range(0, n - i - 1):
-            print(f"j = {j}")
-            print(f"n - i - 1 = {n - i - 1}")
+            #print(f"j = {j}")
+            #print(f"n - i - 1 = {n - i - 1}")
             if l[j] > l[j + 1]:
                 l[j], l[j + 1] = l[j + 1], l[j]
 
@@ -41,11 +40,11 @@ if __name__ == "__main__":
 
     # My Sort
     # my_bubble_sort_v1(MY_LIST)
-    my_bubble_sort_v2(MY_LIST)
-    print(MY_LIST)
+    #my_bubble_sort_v2(MY_LIST)
+    #print(MY_LIST)
 
-    # Built in Sort:
-    # print(sorted(l))
+    #Built in Sort:
+    print(sorted(MY_LIST))
 
     end_time = datetime.now()
     print(f"Duration: {format(end_time - start_time)}")
