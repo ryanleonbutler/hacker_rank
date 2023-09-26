@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "hacker_rank"
+version = "1.0.0"
+description = ""
+authors = ["Ryan Butler <ryanleonbutler@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+    "integration",
+]
+pythonpath = "src"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
